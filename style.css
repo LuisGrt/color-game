@@ -4,6 +4,7 @@ body {
 	margin: 0;
 	font-family: Avenir, Montserrat, sans-serif;
 }
+
 h1 {
 	text-align: center;
 	background-color: steelblue;
@@ -17,25 +18,6 @@ h1 {
 h1 #titleRGB {
 	display: block;
 	font-size: 3.5rem;
-}
-#container {
-	max-width: 600px;
-	margin: 1.5rem auto;
-}
-.square {
-	float: left;
-	width: 28%;
-	margin: 1.66%;
-	padding-bottom: 28%;
-	border-radius: 15%;
-	cursor: pointer;
-	transition: background 300ms;
-	-webkit-transition: background 300ms;
-	-moz-transition: background 30ms;
-}
-
-.square.disabled {
-	pointer-events: none;
 }
 
 #stripe {
@@ -59,9 +41,11 @@ h1 #titleRGB {
 	-webkit-transition: all 300ms;
 	-moz-transition: all 30ms;
 }
+
 #stripe button:focus {
 	outline: none;
 }
+
 #stripe button:hover,
 #stripe button.selected {
 	color: white;
@@ -71,4 +55,113 @@ h1 #titleRGB {
 #stripe #message {
 	display: inline-block;
 	width: 20%;
+}
+
+#container {
+	max-width: 600px;
+	min-height: 600px;
+	margin: 3rem auto;
+}
+
+.square {
+	float: left;
+	width: 30%;
+	margin: 1.66%;
+	padding-bottom: 28%;
+	border-radius: 15%;
+	cursor: pointer;
+	transition: background 300ms;
+	-webkit-transition: background 300ms;
+	-moz-transition: background 30ms;
+}
+
+.square::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.square.disabled {
+	pointer-events: none;
+}
+
+.footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+}
+
+.footer-content a {
+	color: white;
+	font-style: italic;
+	text-decoration: none;
+}
+
+.footer-content a:hover {
+	text-decoration: underline;
+}
+
+.footer-content p:first-of-type {
+	margin-bottom: 0;
+}
+
+.footer-content p:last-of-type {
+	margin-top: 3px;
+}
+
+.small {
+	font-size: 80% !important;
+}
+
+@media (max-width: 992px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h1 #titleRGB {
+		display: block;
+		font-size: 3.3rem;
+	}
+
+	#stripe {
+		font-size: 0.95rem;
+	}
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+
+	h1 #titleRGB {
+		display: block;
+		font-size: 3.1rem;
+	}
+
+	#stripe {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 576px) {
+	#stripe button {
+		letter-spacing: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.4rem;
+	}
+
+	h1 #titleRGB {
+		display: block;
+		font-size: 2.2rem;
+	}
+
+	#stripe {
+		font-size: 0.6rem;
+	}
 }
